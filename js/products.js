@@ -21,7 +21,7 @@ const SIGNATURE_PRODUCT_NAMES = [
 ];
 
 const products = [
-  { id: 1, name: "Kaju Regular", category: "Nuts", description: "Fresh regular cashews for daily snacking, sweets, and kitchen use.", image: "images/Kaju Regular.png", prices: { "250g": 275, "500g": 550, "1kg": 1100 }, rating: 4.7, featured: true, popular: 94 },
+  { id: 1, name: "Kaju Regular", category: "Nuts", description: "Fresh regular cashews for daily snacking, sweets, and kitchen use.", image: "images/Kaju regular.png", prices: { "250g": 275, "500g": 550, "1kg": 1100 }, rating: 4.7, featured: true, popular: 94 },
   { id: 2, name: "Kaju Jumbo", category: "Nuts", description: "Large whole cashews with a buttery bite and premium finish.", image: "images/Kaju jumbo.png", prices: { "250g": 330, "500g": 660, "1kg": 1320 }, rating: 4.9, featured: true, popular: 98 },
   { id: 3, name: "Kaju Masala", category: "Nuts", description: "Roasted cashews seasoned with a savory masala blend.", image: "images/Kaju masala.png", prices: { "250g": 330, "500g": 660, "1kg": 1320 }, rating: 4.8, featured: true, popular: 93 },
   { id: 4, name: "Badam Regular", category: "Nuts", description: "Everyday almonds with clean crunch and rich natural taste.", image: "images/Badam reg.png", prices: { "250g": 330, "500g": 660, "1kg": 1320 }, rating: 4.7, featured: false, popular: 91 },
