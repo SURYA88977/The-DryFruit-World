@@ -144,12 +144,56 @@ function renderCart() {
   }
 }
 
-function generateWhatsAppOrder(customerName) {
+/**
+ * Sends the current order to the owner's Google Sheet via an Apps Script
+ * Web App endpoint. See Code.gs for the script that receives this.
+ *
+ * Uses mode: "no-cors" because Apps Script Web Apps don't return CORS
+ * headers by default — this means we can't read the response back, but
+ * the request still goes through and the row still gets appended.
+ */
+function sendOrderToSheet(cartItems) {
+  const url = STORE_CONFIG.sheetsWebAppUrl;
+  if (!url || url.includes("PASTE_YOUR")) {
+    console.warn("Google Sheets logging is not configured yet — set STORE_CONFIG.sheetsWebAppUrl.");
+    return;
+  }
+
+  const items = cartItems.map((item) => {
+    const product = products.find((entry) => entry.id === item.id);
+    if (!product) return null;
+    return {
+      name: product.name,
+      weight: item.weight,
+      quantity: item.quantity,
+      lineTotal: selectedPrice(product, item.weight) * item.quantity
+    };
+  }).filter(Boolean);
+
+  const payload = {
+    items,
+    grandTotal: cartTotals(),
+    timestamp: new Date().toISOString()
+  };
+
+  fetch(url, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain" },
+    body: JSON.stringify(payload)
+  }).catch((err) => console.error("Order logging to Google Sheets failed:", err));
+}
+
+function generateWhatsAppOrder() {
   if (!cart.length) {
     showToast("Your cart is empty");
     return;
   }
-  const lines = [`Hello ${STORE_CONFIG.name},`, "", `Name : ${customerName}`, "", "I would like to order", ""];
+
+  // Log the order to the owner's Google Sheet before opening WhatsApp
+  sendOrderToSheet(cart);
+
+  const lines = [`Hello ${STORE_CONFIG.name},`, "", "I would like to order", ""];
   cart.forEach((item, index) => {
     const product = products.find((entry) => entry.id === item.id);
     if (!product) return;
