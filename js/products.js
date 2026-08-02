@@ -21,11 +21,11 @@ const SIGNATURE_PRODUCT_NAMES = [
 ];
 
 const products = [
-  { id: 1, name: "Kaju Regular", category: "Nuts", description: "Fresh regular cashews for daily snacking, sweets, and kitchen use.", image: "images/Kaju regular.png", prices: { "250g": 275, "500g": 550, "1kg": 1100 }, rating: 4.7, featured: true, popular: 94 },
+  { id: 1, name: "Kaju Regular", category: "Nuts", description: "Fresh regular cashews for daily snacking, sweets, and kitchen use.", image: "images/Kaju Regular.png", prices: { "250g": 275, "500g": 550, "1kg": 1100 }, rating: 4.7, featured: true, popular: 94 },
   { id: 2, name: "Kaju Jumbo", category: "Nuts", description: "Large whole cashews with a buttery bite and premium finish.", image: "images/Kaju jumbo.png", prices: { "250g": 330, "500g": 660, "1kg": 1320 }, rating: 4.9, featured: true, popular: 98 },
   { id: 3, name: "Kaju Masala", category: "Nuts", description: "Roasted cashews seasoned with a savory masala blend.", image: "images/Kaju masala.png", prices: { "250g": 330, "500g": 660, "1kg": 1320 }, rating: 4.8, featured: true, popular: 93 },
   { id: 4, name: "Badam Regular", category: "Nuts", description: "Everyday almonds with clean crunch and rich natural taste.", image: "images/Badam reg.png", prices: { "250g": 330, "500g": 660, "1kg": 1320 }, rating: 4.7, featured: false, popular: 91 },
-  { id: 5, name: "Badam Jumbo", category: "Nuts", description: "Large premium almonds selected for size, taste, and freshness.", image: "images/Badam jumbo.png", prices: { "250g": 375, "500g": 750, "1kg": 1500 }, rating: 4.9, featured: true, popular: 96 },
+  { id: 5, name: "Badam Jumbo", category: "Nuts", description: "Large premium almonds selected for size, taste, and freshness.", image: "images/Badam Jumbo.png", prices: { "250g": 375, "500g": 750, "1kg": 1500 }, rating: 4.9, featured: true, popular: 96 },
   { id: 6, name: "Badam Mamra", category: "Nuts", description: "Elite mamra almonds prized for texture, aroma, and natural richness.", image: "images/Badam mamra.png", prices: { "250g": 1072, "500g": 2145, "1kg": 4290 }, rating: 4.9, featured: true, popular: 97 },
   { id: 7, name: "Pista Plain", category: "Nuts", description: "Naturally flavored pistachios for clean premium snacking.", image: "images/Pista plain.png", prices: { "250g": 925, "500g": 1850, "1kg": 3700 }, rating: 4.8, featured: false, popular: 87 },
   { id: 8, name: "Pista Salted", category: "Nuts", description: "Lightly salted pistachios with a bright roasted finish.", image: "images/Pista salted.png", prices: { "250g": 545, "500g": 1090, "1kg": 2180 }, rating: 4.8, featured: true, popular: 90 },
